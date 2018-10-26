@@ -2,9 +2,9 @@
 Final exam, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Nathaniel Blanco.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
@@ -213,14 +213,15 @@ def problem5(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-    candidate = x
+    integer_to_check = x
+
     while True:
-        if is_prime(candidate) and is_prime(sum_of_digits(candidate)):
-            return candidate
-        candidate = candidate + 1
+        if is_prime(integer_to_check) and is_prime(sum_of_digits(integer_to_check)) is True:
+            return integer_to_check
+        integer_to_check = integer_to_check + 1
 
 
 ###############################################################################

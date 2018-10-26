@@ -2,12 +2,13 @@
 Exam 3, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  October 2018.
+         their colleagues and Nathaniel Blanco.  October 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
+import math
 
 
 def main():
@@ -90,14 +91,15 @@ def problem2(sequence):
       :type sequence [list]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-    index = 0
-    for k in range(1, len(sequence)):
-        if abs(sequence[k]) > abs(sequence[index]):
-            index = k
-    return index
+    largest_number = 0
+    for index in range(1, len(sequence)):
+        if math.fabs(sequence[index]) > math.fabs(sequence[largest_number]):
+            largest_number = index
+    return largest_number
+
 
 
 ###############################################################################

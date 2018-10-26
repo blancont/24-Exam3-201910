@@ -2,8 +2,8 @@
 Exam 3, problem 4.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, their colleagues,
-         and PUT_YOUR_NAME_HERE.  October, 2018.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Nathaniel Blanco.  October, 2018.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -77,12 +77,51 @@ And this one for n=14:
     :type n: int
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     ####################################################################
     # IMPORTANT: In your final solution for this problem,
     #   you must NOT use string multiplication.
     ####################################################################
+
+    # Outer for loop will print row-by-row
+    for current_row in range(n):
+        # current_row starts at 0, so set the variable row_number to current_row + 1
+        # to call the first row "row 1" (makes determining ranges less confusing)
+        row_number = current_row + 1
+
+        # Printing spaces
+        for space in range(n - row_number):
+            print(' ', end='')
+
+        # Printing numbers
+        for number in range(row_number):
+            printed_number = str(number + 1)
+            if number + 1 < 10:
+                print(printed_number, end='')
+            else:
+                print(str(printed_number[len(printed_number) - 1]), end='')
+
+        # Printing space between numbers and stars
+        print(' ', end='')
+
+        # Printing stars (number of stars is one more than the row number, assuming first row is row 1)
+        for star in range(row_number + 1):
+            print('*', end='')
+
+        # One more space!
+        print(' ', end='')
+
+        # Printing numbers in reverse (subtracting current_row since zero numbers are excluded at "row 1")
+        for number in range(n - current_row, 0, -1):
+            printed_number = str(number)
+            if number < 10:
+                print(printed_number, end='')
+            else:
+                print(str(printed_number[len(printed_number) - 1]), end='')
+
+        # Starting new row
+        print()
 
 
 # ----------------------------------------------------------------------
